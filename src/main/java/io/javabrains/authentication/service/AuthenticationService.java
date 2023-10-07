@@ -35,7 +35,6 @@ public class AuthenticationService {
     }
 
     public String getToken(AuthenticatedRequest request){
-        jwtService.getClass();
-        return "";
+        return jwtService.getToken(request.getUserName());
     }
 }

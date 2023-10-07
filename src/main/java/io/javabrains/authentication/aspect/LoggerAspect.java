@@ -16,7 +16,7 @@ public class LoggerAspect {
             + "|| execution(* io.javabrains.authentication.configuration..*(..))")
 
     public Object aroundAdvice(ProceedingJoinPoint joinPoint) throws Throwable{
-        String methodName = joinPoint.getSignature().getClass().getName();
+        String methodName = joinPoint.getSignature().getName();
         log.info("Execution started for method - {}",methodName);
         Object reference = joinPoint.proceed();
         log.info("Execution end for method - {}", methodName);

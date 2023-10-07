@@ -5,6 +5,6 @@ import io.javabrains.authentication.entity.UserCredentials;
 import java.util.Optional;
 
 public interface UserCredentialRepository extends JpaRepository<UserCredentials, Integer> {
-    Optional<UserCredentials> findUserCredentialsByEmail(UserCredentials user);
+
     Optional<UserCredentials> findByEmail(String userName);
 }

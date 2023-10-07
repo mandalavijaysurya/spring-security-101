@@ -24,11 +24,8 @@ public class AuthConfiguration {
     @Bean
     public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
         return http
-                .httpBasic(AbstractHttpConfigurer::disable)
-                .formLogin(AbstractHttpConfigurer::disable)
-                .logout(AbstractHttpConfigurer::disable)
-                .csrf(AbstractHttpConfigurer::disable).exceptionHandling(Customizer.withDefaults())
-                .authorizeHttpRequests(auth -> auth.requestMatchers("/auth/validate","/auth/tkn").permitAll()
+                .csrf(csrf -> csrf.disable())
+                .authorizeHttpRequests(auth -> auth.requestMatchers("/auth/register","/auth/tkn").permitAll()
                         .anyRequest().authenticated()
                 ).build();
     }

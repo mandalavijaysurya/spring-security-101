@@ -17,6 +17,7 @@ import java.util.Optional;
 @NoArgsConstructor
 public class CustomUserDetailsService implements UserDetailsService {
 
+    @Autowired
     private UserCredentialRepository userCredentialRepository;
     @Override
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
